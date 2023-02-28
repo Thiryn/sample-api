@@ -16,7 +16,7 @@ import (
 
 // DefaultApiController binds http requests to an api service and writes the service results to the http response
 type DefaultApiController struct {
-	service      DefaultApiServicer
+	service      DefaultApiService
 	errorHandler ErrorHandler
 }
 
@@ -31,7 +31,7 @@ func WithDefaultApiErrorHandler(h ErrorHandler) DefaultApiOption {
 }
 
 // NewDefaultApiController creates a default api controller
-func NewDefaultApiController(s DefaultApiServicer, opts ...DefaultApiOption) Router {
+func NewDefaultApiController(s DefaultApiService, opts ...DefaultApiOption) Router {
 	controller := &DefaultApiController{
 		service:      s,
 		errorHandler: DefaultErrorHandler,

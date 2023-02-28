@@ -22,7 +22,7 @@ const (
 	bucket    = "dorian-test"
 )
 
-// DefaultApiService is a service that implements the logic for the DefaultApiServicer
+// DefaultApiService is a service that implements the logic for the DefaultApiService
 // This service should implement the business logic for every endpoint for the DefaultApi API.
 // Include any external packages or services that will be required by this service.
 type DefaultApiService struct {
@@ -30,7 +30,7 @@ type DefaultApiService struct {
 }
 
 // NewDefaultApiService creates a default api service
-func NewDefaultApiService() openapi.DefaultApiServicer {
+func NewDefaultApiService() openapi.DefaultApiService {
 	return &DefaultApiService{S3Client: s3.New(s3.Options{Region: "eu-west-2"})}
 }
 

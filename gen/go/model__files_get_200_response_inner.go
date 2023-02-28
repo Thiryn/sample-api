@@ -10,7 +10,6 @@
 package openapi
 
 type FilesGet200ResponseInner struct {
-
 	FileName string `json:"fileName,omitempty"`
 }
 

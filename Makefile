@@ -31,18 +31,18 @@ deploy:
 	helm upgrade --create-namespace 	\
 		--install 						\
 		--dependency-update 			\
-		-n sample-api 					\
+		-n team-demo 					\
 		sample-api ./deployment/sample-api
 
 .PHONY: minikube-deploy
 minikube-deploy: minikube-context deploy
 
-.PHONY: install-otomi
+.PHONY: do-install-otomi
 install-otomi:
 	helm repo add otomi https://otomi.io/otomi-core
 	helm repo update
 	helm install otomi otomi/otomi \
-	--set cluster.k8sVersion="1.22" \
-	--set cluster.name=minikube \
-	--set cluster.provider=custom \
+	--set cluster.k8sVersion="1.23" \
+	--set cluster.name=interview \
+	--set cluster.provider=digitalocean \
 	--set apps.host-mods.enabled=false

@@ -23,8 +23,16 @@ make minikube-start
 make minikube-deploy
 ```
 
-3. Install Otomi
+### DigitalOcean
+1. Deploy API the chart
 
 ```shell
-make install-otomi
+make deploy
 ```
+
+2. Install Otomi
+
+```shell
+make do-install-otomi
+```
+
